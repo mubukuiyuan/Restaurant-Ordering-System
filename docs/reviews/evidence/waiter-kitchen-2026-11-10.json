@@ -1,0 +1,821 @@
+{
+  "repository_commit": "142463f8f055c0368a9a9dd5f4655dfffab26610",
+  "mysql_version": "8.0.46",
+  "python_version": "3.14.3",
+  "events": [
+    {
+      "role": "waiter",
+      "action": "login",
+      "code": 0,
+      "data": {
+        "employee_id": 2,
+        "name": "服务员小王",
+        "role": "服务员"
+      }
+    },
+    {
+      "role": "kitchen",
+      "action": "login",
+      "code": 0,
+      "data": {
+        "employee_id": 3,
+        "name": "后厨小李",
+        "role": "后厨"
+      }
+    },
+    {
+      "role": "cashier",
+      "action": "login",
+      "code": 0,
+      "data": {
+        "employee_id": 4,
+        "name": "收银员小张",
+        "role": "收银员"
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "list_tables",
+      "request": {},
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "tables": [
+          {
+            "table_id": 1,
+            "table_no": "A01",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 2,
+            "table_no": "A02",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 3,
+            "table_no": "A03",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 4,
+            "table_no": "A04",
+            "seats": 6,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 5,
+            "table_no": "A05",
+            "seats": 6,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 6,
+            "table_no": "A06",
+            "seats": 8,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 7,
+            "table_no": "B01",
+            "seats": 2,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 8,
+            "table_no": "B02",
+            "seats": 2,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 9,
+            "table_no": "B03",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 10,
+            "table_no": "B04",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 11,
+            "table_no": "B05",
+            "seats": 6,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 12,
+            "table_no": "B06",
+            "seats": 8,
+            "status": "空闲",
+            "current_order_id": null
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "open_table",
+      "request": {
+        "table_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "table_id": 1,
+        "table_no": "A01",
+        "seats": 4,
+        "status": "占用",
+        "current_order_id": null
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "create_order",
+      "request": {
+        "table_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "table_id": 1,
+        "items": []
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "submit_order",
+      "request": {
+        "table_id": 1,
+        "items": [
+          {
+            "dish_id": 1,
+            "quantity": 2
+          },
+          {
+            "dish_id": 2,
+            "quantity": 1
+          }
+        ]
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "table_id": 1,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已提交",
+        "total_price": "82.00",
+        "version": 1,
+        "order_items": [
+          {
+            "item_id": 1,
+            "order_id": 1,
+            "dish_id": 1,
+            "quantity": 2,
+            "price": "28.00",
+            "status": "待制作",
+            "dish_name": "宫保鸡丁",
+            "subtotal": "56.00"
+          },
+          {
+            "item_id": 2,
+            "order_id": 1,
+            "dish_id": 2,
+            "quantity": 1,
+            "price": "26.00",
+            "status": "待制作",
+            "dish_name": "鱼香肉丝",
+            "subtotal": "26.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "add_item",
+      "request": {
+        "order_id": 1,
+        "dish_id": 5,
+        "quantity": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "table_id": 1,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已提交",
+        "total_price": "85.00",
+        "version": 2,
+        "order_items": [
+          {
+            "item_id": 1,
+            "order_id": 1,
+            "dish_id": 1,
+            "quantity": 2,
+            "price": "28.00",
+            "status": "待制作",
+            "dish_name": "宫保鸡丁",
+            "subtotal": "56.00"
+          },
+          {
+            "item_id": 2,
+            "order_id": 1,
+            "dish_id": 2,
+            "quantity": 1,
+            "price": "26.00",
+            "status": "待制作",
+            "dish_name": "鱼香肉丝",
+            "subtotal": "26.00"
+          },
+          {
+            "item_id": 3,
+            "order_id": 1,
+            "dish_id": 5,
+            "quantity": 1,
+            "price": "3.00",
+            "status": "待制作",
+            "dish_name": "米饭",
+            "subtotal": "3.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "remove_item",
+      "request": {
+        "order_id": 1,
+        "item_id": 3,
+        "reason": "顾客取消米饭"
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "table_id": 1,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已提交",
+        "total_price": "82.00",
+        "version": 3,
+        "order_items": [
+          {
+            "item_id": 1,
+            "order_id": 1,
+            "dish_id": 1,
+            "quantity": 2,
+            "price": "28.00",
+            "status": "待制作",
+            "dish_name": "宫保鸡丁",
+            "subtotal": "56.00"
+          },
+          {
+            "item_id": 2,
+            "order_id": 1,
+            "dish_id": 2,
+            "quantity": 1,
+            "price": "26.00",
+            "status": "待制作",
+            "dish_name": "鱼香肉丝",
+            "subtotal": "26.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "open_table",
+      "request": {
+        "table_id": 2
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "table_id": 2,
+        "table_no": "A02",
+        "seats": 4,
+        "status": "占用",
+        "current_order_id": null
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "submit_order",
+      "request": {
+        "table_id": 2,
+        "items": [
+          {
+            "dish_id": 3,
+            "quantity": 1
+          }
+        ]
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 2,
+        "table_id": 2,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已提交",
+        "total_price": "18.00",
+        "version": 1,
+        "order_items": [
+          {
+            "item_id": 4,
+            "order_id": 2,
+            "dish_id": 3,
+            "quantity": 1,
+            "price": "18.00",
+            "status": "待制作",
+            "dish_name": "番茄炒蛋",
+            "subtotal": "18.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "remove_item",
+      "request": {
+        "order_id": 2,
+        "item_id": 4,
+        "reason": "尝试退最后一道菜"
+      },
+      "code": 409,
+      "message": "订单至少保留一条明细",
+      "data": {}
+    },
+    {
+      "role": "waiter",
+      "action": "get_order_status",
+      "request": {
+        "order_id": 2
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 2,
+        "table_id": 2,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已提交",
+        "total_price": "18.00",
+        "version": 1,
+        "items": [
+          {
+            "item_id": 4,
+            "order_id": 2,
+            "dish_id": 3,
+            "quantity": 1,
+            "price": "18.00",
+            "status": "待制作",
+            "dish_name": "番茄炒蛋",
+            "subtotal": "18.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "kitchen",
+      "action": "list_kitchen_orders",
+      "request": {},
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "orders": [
+          {
+            "order_id": 1,
+            "table_id": 1,
+            "waiter_id": 2,
+            "order_time": "2026-11-10T22:39:50",
+            "status": "已提交",
+            "total_price": "82.00",
+            "version": 3,
+            "table_no": "A01",
+            "items": [
+              {
+                "item_id": 1,
+                "order_id": 1,
+                "dish_id": 1,
+                "quantity": 2,
+                "price": "28.00",
+                "status": "待制作",
+                "dish_name": "宫保鸡丁",
+                "subtotal": "56.00"
+              },
+              {
+                "item_id": 2,
+                "order_id": 1,
+                "dish_id": 2,
+                "quantity": 1,
+                "price": "26.00",
+                "status": "待制作",
+                "dish_name": "鱼香肉丝",
+                "subtotal": "26.00"
+              }
+            ]
+          },
+          {
+            "order_id": 2,
+            "table_id": 2,
+            "waiter_id": 2,
+            "order_time": "2026-11-10T22:39:50",
+            "status": "已提交",
+            "total_price": "18.00",
+            "version": 1,
+            "table_no": "A02",
+            "items": [
+              {
+                "item_id": 4,
+                "order_id": 2,
+                "dish_id": 3,
+                "quantity": 1,
+                "price": "18.00",
+                "status": "待制作",
+                "dish_name": "番茄炒蛋",
+                "subtotal": "18.00"
+              }
+            ]
+          }
+        ],
+        "total": 2
+      }
+    },
+    {
+      "role": "kitchen",
+      "action": "accept_order",
+      "request": {
+        "order_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "status": "已接单"
+      }
+    },
+    {
+      "role": "kitchen",
+      "action": "start_item",
+      "request": {
+        "order_id": 1,
+        "item_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "item_id": 1,
+        "status": "制作中"
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "remove_item",
+      "request": {
+        "order_id": 1,
+        "item_id": 1,
+        "reason": "制作中退菜"
+      },
+      "code": 409,
+      "message": "仅待制作菜品可以退菜",
+      "data": {}
+    },
+    {
+      "role": "kitchen",
+      "action": "mark_served",
+      "request": {
+        "order_id": 1,
+        "item_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "item_id": 1,
+        "status": "已出菜"
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "remove_item",
+      "request": {
+        "order_id": 1,
+        "item_id": 1,
+        "reason": "已出菜退菜"
+      },
+      "code": 409,
+      "message": "仅待制作菜品可以退菜",
+      "data": {}
+    },
+    {
+      "role": "kitchen",
+      "action": "start_item",
+      "request": {
+        "order_id": 1,
+        "item_id": 2
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "item_id": 2,
+        "status": "制作中"
+      }
+    },
+    {
+      "role": "kitchen",
+      "action": "mark_served",
+      "request": {
+        "order_id": 1,
+        "item_id": 2
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "item_id": 2,
+        "status": "已出菜"
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "get_order_status",
+      "request": {
+        "order_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "table_id": 1,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已接单",
+        "total_price": "82.00",
+        "version": 8,
+        "items": [
+          {
+            "item_id": 1,
+            "order_id": 1,
+            "dish_id": 1,
+            "quantity": 2,
+            "price": "28.00",
+            "status": "已出菜",
+            "dish_name": "宫保鸡丁",
+            "subtotal": "56.00"
+          },
+          {
+            "item_id": 2,
+            "order_id": 1,
+            "dish_id": 2,
+            "quantity": 1,
+            "price": "26.00",
+            "status": "已出菜",
+            "dish_name": "鱼香肉丝",
+            "subtotal": "26.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "clear_table",
+      "request": {
+        "table_id": 1
+      },
+      "code": 409,
+      "message": "请先完成结账再清台",
+      "data": {}
+    },
+    {
+      "role": "cashier",
+      "action": "preview_bill",
+      "request": {
+        "order_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "items": [
+          {
+            "item_id": 1,
+            "order_id": 1,
+            "dish_id": 1,
+            "quantity": 2,
+            "price": "28.00",
+            "status": "已出菜",
+            "dish_name": "宫保鸡丁",
+            "subtotal": "56.00"
+          },
+          {
+            "item_id": 2,
+            "order_id": 1,
+            "dish_id": 2,
+            "quantity": 1,
+            "price": "26.00",
+            "status": "已出菜",
+            "dish_name": "鱼香肉丝",
+            "subtotal": "26.00"
+          }
+        ],
+        "total_amount": "82.00",
+        "quote_version": 8
+      }
+    },
+    {
+      "role": "cashier",
+      "action": "settle_bill",
+      "request": {
+        "order_id": 1,
+        "quote_version": 8,
+        "paid_amount": "82.00",
+        "pay_method": "现金"
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "bill_id": 1,
+        "order_id": 1,
+        "cashier_id": 4,
+        "total_amount": "82.00",
+        "paid_amount": "82.00",
+        "pay_method": "现金",
+        "pay_time": "2026-11-10T22:39:50",
+        "change_amount": "0.00"
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "clear_table",
+      "request": {
+        "table_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "table_id": 1,
+        "table_no": "A01",
+        "seats": 4,
+        "status": "空闲",
+        "current_order_id": null
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "get_order_status",
+      "request": {
+        "order_id": 1
+      },
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "order_id": 1,
+        "table_id": 1,
+        "waiter_id": 2,
+        "order_time": "2026-11-10T22:39:50",
+        "status": "已结账",
+        "total_price": "82.00",
+        "version": 9,
+        "items": [
+          {
+            "item_id": 1,
+            "order_id": 1,
+            "dish_id": 1,
+            "quantity": 2,
+            "price": "28.00",
+            "status": "已出菜",
+            "dish_name": "宫保鸡丁",
+            "subtotal": "56.00"
+          },
+          {
+            "item_id": 2,
+            "order_id": 1,
+            "dish_id": 2,
+            "quantity": 1,
+            "price": "26.00",
+            "status": "已出菜",
+            "dish_name": "鱼香肉丝",
+            "subtotal": "26.00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "waiter",
+      "action": "list_tables",
+      "request": {},
+      "code": 0,
+      "message": "成功",
+      "data": {
+        "tables": [
+          {
+            "table_id": 1,
+            "table_no": "A01",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 2,
+            "table_no": "A02",
+            "seats": 4,
+            "status": "占用",
+            "current_order_id": 2
+          },
+          {
+            "table_id": 3,
+            "table_no": "A03",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 4,
+            "table_no": "A04",
+            "seats": 6,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 5,
+            "table_no": "A05",
+            "seats": 6,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 6,
+            "table_no": "A06",
+            "seats": 8,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 7,
+            "table_no": "B01",
+            "seats": 2,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 8,
+            "table_no": "B02",
+            "seats": 2,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 9,
+            "table_no": "B03",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 10,
+            "table_no": "B04",
+            "seats": 4,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 11,
+            "table_no": "B05",
+            "seats": 6,
+            "status": "空闲",
+            "current_order_id": null
+          },
+          {
+            "table_id": 12,
+            "table_no": "B06",
+            "seats": 8,
+            "status": "空闲",
+            "current_order_id": null
+          }
+        ]
+      }
+    }
+  ]
+}
